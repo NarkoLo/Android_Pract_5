@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Android_Pract_5</string>
+    <string name="authorization">Log in</string>
+    <string name="email_login_hint">example@mail.com</string>
+    <string name="password_hint">********</string>
+    <string name="button_login">Войти</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="title">Регистрация</string>
+    <string name="nickname_hint">Введите никнейм</string>
+    <string name="name_hint">Введите имя</string>
+    <string name="surname_hint">Введите фамилию</string>
+    <string name="email_register_hint">Введите e-mail</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="item_amount">10$</string>
+    <string name="button_add_to_card">add to card</string>
+    <string name="item_title">something</string>
+    <string name="beer_price">20$</string>
+    <string name="comment_to_the_order">12</string>
+    <string name="comment_hint">Buy now!</string>
+    <string name="buy_button_text">buy</string>
+    <string name="name">something</string>
 </resources>
