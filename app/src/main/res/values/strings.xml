@@ -10,7 +10,7 @@
     <string name="name_hint">Введите имя</string>
     <string name="surname_hint">Введите фамилию</string>
     <string name="email_register_hint">Введите e-mail</string>
-    <string name="register">Зарегистрироваться</string>
+    <string name="register">Завершить</string>
     <string name="item_amount">10$</string>
     <string name="button_add_to_card">add to card</string>
     <string name="item_title">something</string>
@@ -19,4 +19,5 @@
     <string name="comment_hint">Buy now!</string>
     <string name="buy_button_text">buy</string>
     <string name="name">something</string>
+    <string name="password_reg_hint">Введиет пароль</string>
 </resources>

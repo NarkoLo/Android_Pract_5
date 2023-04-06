@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,8 +11,11 @@
         android:id="@+id/regscrn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/title"
-        android:textSize="24sp"/>
+        android:textColor="#EF6C00"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/nickname"
@@ -39,12 +44,31 @@
         android:layout_height="wrap_content"
         android:hint="@string/email_register_hint"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_reg_hint"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        tools:ignore="TextFields" />
 
     <Button
         android:id="@+id/btnreg"
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="@string/register"/>
+        android:layout_gravity="center"
+        android:text="@string/register" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="357dp"
+        android:layout_height="357dp"
+        android:paddingLeft="16dp"
+        app:srcCompat="@drawable/beercat"
+        tools:ignore="ImageContrastCheck" />
 
 </LinearLayout>

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 public class HomeFragment extends Fragment{
     final public static String TAG = HomeFragment.class.getSimpleName();
@@ -47,71 +48,9 @@ public class HomeFragment extends Fragment{
         exit = (Button) view.findViewById(R.id.exit);
 
 
-        exit.setOnClickListener(vie -> {
-            Bundle userData = new Bundle();
-            userData.putString("email", email.getText().toString());
-            getChildFragmentManager().setFragmentResult("req", userData);
-            Log.i(TAG, "Data transferred");
-        });
+        exit.setOnClickListener(vie -> Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_loginFragment));
         Log.i(TAG, "onViewCreated");
         Toast.makeText(getContext(), "onViewCreated", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getParentFragmentManager().setFragmentResultListener("req", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                email.setText(result.getString("email"));
-                username.setText(result.getString("username"));
-            }
-        });
-        Log.i(TAG, "Created");
-        Toast.makeText(getContext(), "onCreated", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Log.i(TAG, "Started");
-        Toast.makeText(getContext(), "onStarted", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.i(TAG, "Paused");
-        Toast.makeText(getContext(), "onPaused", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Log.i(TAG, "onAttach");
-        Toast.makeText(getContext(), "onAttach", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.i(TAG, "onDetach");
-        Toast.makeText(getContext(), "onDetach", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.i(TAG, "Stopped");
-        Toast.makeText(getContext(), "onStopped", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "Destroyed");
-        Toast.makeText(getContext(), "onDestroyed", Toast.LENGTH_SHORT).show();
-    }
-
 
 }

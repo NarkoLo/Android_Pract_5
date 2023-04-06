@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 public class LoginFragment extends Fragment {
     final public static String TAG = LoginFragment.class.getSimpleName();
@@ -57,83 +58,9 @@ public class LoginFragment extends Fragment {
         login = (Button) view.findViewById(R.id.button_login);
         register = (TextView) view.findViewById(R.id.textView_register);
 
-        login.setOnClickListener(vie -> {
-            Bundle userData = new Bundle();
-            userData.putString("email", email.getText().toString());
-            getParentFragmentManager().setFragmentResult("req",userData);
-            Log.i(TAG, "Data transferred");
-        });
+        login.setOnClickListener(vie -> Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment));
+        register.setOnClickListener(vie -> Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment));
         Log.i(TAG, "onViewCreated");
         Toast.makeText(getContext(), "onViewCreated", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Log.i(TAG, "onAttached");
-        Toast.makeText(getContext(), "onAttached", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getParentFragmentManager().setFragmentResultListener("req", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                email.setText(result.getString("email"));
-            }
-        });
-        Log.i(TAG, "Created");
-        Toast.makeText(getContext(), "Created", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.i(TAG, "onResume");
-        Toast.makeText(getContext(), "onResume", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Log.i(TAG, "onStarted");
-        Toast.makeText(getContext(), "onStarted", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Log.i(TAG, "onDestroyView");
-        Toast.makeText(getContext(), "onDestroyView", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.i(TAG, "onPaused");
-        Toast.makeText(getContext(), "onPaused", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStopped");
-        Toast.makeText(getContext(), "onStopped", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "onDestroyed");
-        Toast.makeText(getContext(), "onDestroyed", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.i(TAG, "onDetach");
-        Toast.makeText(getContext(), "onDetach", Toast.LENGTH_SHORT).show();
-    }
-
 }

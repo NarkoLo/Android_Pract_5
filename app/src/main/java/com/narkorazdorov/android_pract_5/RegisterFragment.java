@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 public class RegisterFragment extends Fragment {
     final public static String TAG = RegisterFragment.class.getSimpleName();
@@ -57,60 +58,7 @@ public class RegisterFragment extends Fragment {
         rgn = view.findViewById(R.id.btnreg);
 
 
-        rgn.setOnClickListener(view1 -> {
-
-
-        });
+        rgn.setOnClickListener(view1 -> Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment2));
 
     }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.i(TAG, "Created");
-        Toast.makeText(getContext(), "Created", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Log.i(TAG, "Started");
-        Toast.makeText(getContext(), "Started", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.i(TAG, "Paused");
-        Toast.makeText(getContext(), "Paused", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Log.i(TAG, "onAttach");
-        Toast.makeText(getContext(), "onAttach", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.i(TAG, "onDetach");
-        Toast.makeText(getContext(), "onDetach", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.i(TAG, "Stopped");
-        Toast.makeText(getContext(), "Stopped", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "Destroyed");
-        Toast.makeText(getContext(), "Destroyed", Toast.LENGTH_SHORT).show();
-    }
-
 }
